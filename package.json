@@ -68,12 +68,16 @@
         "dmg",
         "zip"
       ],
-      "icon": "build/icon.icns",
       "darkModeSupport": true,
       "hardenedRuntime": true,
       "gatekeeperAssess": false,
       "electronLanguages": ["en"],
-      "artifactName": "${productName}-${version}-${arch}.${ext}"
+      "artifactName": "${productName}-${version}-${arch}.${ext}",
+      "electronDownload": {
+        "verifyChecksum": false
+      },
+      "forceCodeSigning": false,
+      "icon": null
     },
     "win": {
       "target": [
