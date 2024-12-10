@@ -58,7 +58,7 @@
     "productName": "SpearfishLauncher",
     "artifactName": "${productName}-setup-${version}.${ext}",
     "electronDownload": {
-      "verifyChecksum": false
+      "isVerifyChecksum": false
     },
     "publish": [{
       "provider": "github",
