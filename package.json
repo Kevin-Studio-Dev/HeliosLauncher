@@ -1,6 +1,6 @@
 {
   "name": "spearforestlauncher",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "productName": "Spearforest Launcher",
   "description": "Modded Minecraft Launcher",
   "author": "Sunghyun Kim",
@@ -65,7 +65,10 @@
         "dmg",
         "zip"
       ],
-      "icon": "build/icon.icns"
+      "icon": "build/icon.icns",
+      "darkModeSupport": true,
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false
     },
     "win": {
       "target": [

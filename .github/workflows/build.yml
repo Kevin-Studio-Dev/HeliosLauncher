@@ -44,6 +44,7 @@ jobs:
           if [ "$RUNNER_OS" == "Windows" ]; then
             npm run dist:win
           elif [ "$RUNNER_OS" == "macOS" ]; then
+            export CSC_IDENTITY_AUTO_DISCOVERY=false
             npm run dist:mac
           else
             npm run dist:linux
