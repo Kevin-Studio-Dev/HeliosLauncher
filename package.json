@@ -57,6 +57,9 @@
     "appId": "com.spearfish.launcher",
     "productName": "SpearfishLauncher",
     "artifactName": "${productName}-setup-${version}.${ext}",
+    "electronDownload": {
+      "verifyChecksum": false
+    },
     "publish": [{
       "provider": "github",
       "owner": "Kevin-Studio-Dev",
@@ -73,9 +76,6 @@
       "gatekeeperAssess": false,
       "electronLanguages": ["en"],
       "artifactName": "${productName}-${version}-${arch}.${ext}",
-      "electronDownload": {
-        "verifyChecksum": false
-      },
       "forceCodeSigning": false,
       "icon": null
     },
