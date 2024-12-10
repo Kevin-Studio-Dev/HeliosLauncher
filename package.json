@@ -14,13 +14,10 @@
   "scripts": {
     "start": "electron .",
     "build": "electron-builder build",
-    "build:mac": "electron-builder build --mac",
-    "build:win": "electron-builder build --win",
-    "build:linux": "electron-builder build --linux",
     "dist": "electron-builder",
-    "dist:mac": "electron-builder --mac",
-    "dist:win": "electron-builder --win",
-    "dist:linux": "electron-builder --linux",
+    "dist:win": "electron-builder --win --publish always",
+    "dist:mac": "electron-builder --mac --publish always",
+    "dist:linux": "electron-builder --linux --publish always",
     "lint": "eslint --config .eslintrc.json .",
     "publish": "electron-builder -p always"
   },

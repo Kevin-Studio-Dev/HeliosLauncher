@@ -7,34 +7,44 @@ on:
 
 jobs:
   release:
+    name: Build (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
-
     strategy:
+      fail-fast: false
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-
+        
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
+          
+      # Linux 의존성 설치
+      - name: Install Linux dependencies
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libx11-dev libxkbfile-dev libsecret-1-dev libasound2
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install -g electron-builder
 
       - name: Build/Release Electron app
-        uses: samuelmeuli/action-electron-builder@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          release: ${{ startsWith(github.ref, 'refs/tags/v') }}
-
-          # macOS 코드 서명 설정 (선택사항)
-          mac_certs: ${{ secrets.mac_certs }}
-          mac_certs_password: ${{ secrets.mac_certs_password }}
-          
-          # Windows 코드 서명 설정 (선택사항)
-          windows_certs: ${{ secrets.windows_certs }}
-          windows_certs_password: ${{ secrets.windows_certs_password }} 
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ "$RUNNER_OS" == "Windows" ]; then
+            npm run dist:win
+          elif [ "$RUNNER_OS" == "macOS" ]; then
+            npm run dist:mac
+          else
+            npm run dist:linux
+          fi 
