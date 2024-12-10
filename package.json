@@ -5,9 +5,9 @@
   "description": "Modded Minecraft Launcher",
   "author": "Sunghyun Kim",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/Kevin-Studio-Dev/SpearfishForest4-Launcher-New",
+  "homepage": "https://github.com/Kevin-Studio-Dev/SpearfishForest4-HeliosLauncher",
   "bugs": {
-    "url": "https://github.com/Kevin-Studio-Dev/SpearfishForest4-Launcher-New/issues"
+    "url": "https://github.com/Kevin-Studio-Dev/SpearfishForest4-HeliosLauncher/issues"
   },
   "private": true,
   "main": "index.js",
@@ -48,5 +48,15 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/{your-username}/{your-repo}.git"
+  },
+  "build": {
+    "appId": "com.spearfish.launcher",
+    "productName": "SpearfishLauncher",
+    "artifactName": "${productName}-setup-${version}.${ext}",
+    "publish": [{
+      "provider": "github",
+      "owner": "Kevin-Studio-Dev",
+      "repo": "SpearfishForest4-HeliosLauncher"
+    }]
   }
 }

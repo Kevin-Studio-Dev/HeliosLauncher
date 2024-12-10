@@ -251,3 +251,19 @@ if (process.platform === 'darwin') {
 // 메뉴 적용
 const menu = Menu.buildFromTemplate(template)
 Menu.setApplicationMenu(menu)
+
+// 업데이트 확인 함수 추가
+function checkForUpdates() {
+  const autoUpdater = require('electron-updater').autoUpdater
+  
+  autoUpdater.checkForUpdates()
+  
+  autoUpdater.on('update-available', () => {
+    // 업데이트 알림 표시
+  })
+  
+  autoUpdater.on('update-downloaded', () => {
+    // 업데이트 설치 진행
+    autoUpdater.quitAndInstall()
+  })
+}

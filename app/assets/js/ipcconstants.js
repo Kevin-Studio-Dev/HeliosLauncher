@@ -1,7 +1,7 @@
 // NOTE FOR THIRD-PARTY
 // REPLACE THIS CLIENT ID WITH YOUR APPLICATION ID.
 // SEE https://github.com/dscalzi/HeliosLauncher/blob/master/docs/MicrosoftAuth.md
-exports.AZURE_CLIENT_ID = '1ce6e35a-126f-48fd-97fb-54d143ac6d45'
+exports.AZURE_CLIENT_ID = 'b0ce7e8e-2bba-4acf-b773-f5f92824771f'
 // SEE NOTE ABOVE.
 
 
@@ -26,3 +26,7 @@ exports.MSFT_ERROR = {
 exports.SHELL_OPCODE = {
     TRASH_ITEM: 'TRASH_ITEM'
 }
+
+// GitHub 저장소 정보 수정
+exports.GITHUB_OWNER = 'Kevin-Studio-Dev'
+exports.GITHUB_REPO = 'SpearfishForest4-HeliosLauncher'
