@@ -52,7 +52,10 @@ jobs:
           CSC_IDENTITY_AUTO_DISCOVERY: false
           USE_HARD_LINKS: false
           ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES: true
-        run: npm run dist:mac
+        run: |
+          mkdir -p build
+          cp assets/icons/icon.icns build/icon.icns || true
+          npm run dist:mac
 
       # Linux 빌드
       - name: Build Linux
