@@ -64,7 +64,8 @@
       {
         "provider": "github",
         "owner": "Kevin-Studio-Dev",
-        "repo": "SpearfishForest4-HeliosLauncher"
+        "repo": "SpearfishForest4-HeliosLauncher",
+        "force": true
       }
     ],
     "mac": {
@@ -81,7 +82,6 @@
       ],
       "artifactName": "${productName}-${version}-${arch}.${ext}",
       "forceCodeSigning": false,
-      "allowOverwrite": true,
       "icon": "build/icon.png"
     },
     "win": {
