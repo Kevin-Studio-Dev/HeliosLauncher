@@ -1,6 +1,6 @@
 {
   "name": "spearforestlauncher",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "productName": "Spearforest4 Launcher",
   "description": "Modded Minecraft Launcher",
   "author": {
@@ -60,11 +60,13 @@
     "electronDownload": {
       "isVerifyChecksum": false
     },
-    "publish": [{
-      "provider": "github",
-      "owner": "Kevin-Studio-Dev",
-      "repo": "SpearfishForest4-HeliosLauncher"
-    }],
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Kevin-Studio-Dev",
+        "repo": "SpearfishForest4-HeliosLauncher"
+      }
+    ],
     "mac": {
       "category": "public.app-category.games",
       "target": [
@@ -74,7 +76,9 @@
       "darkModeSupport": true,
       "hardenedRuntime": true,
       "gatekeeperAssess": false,
-      "electronLanguages": ["ko"],
+      "electronLanguages": [
+        "ko"
+      ],
       "artifactName": "${productName}-${version}-${arch}.${ext}",
       "forceCodeSigning": false,
       "icon": "build/icon.png"
