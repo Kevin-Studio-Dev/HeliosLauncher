@@ -13,14 +13,10 @@
   "main": "index.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder build",
-    "build:mac": "electron-builder build --mac",
-    "build:win": "electron-builder build --win",
-    "build:linux": "electron-builder build --linux",
-    "dist": "electron-builder",
-    "dist:mac": "electron-builder --mac",
-    "dist:win": "electron-builder --win",
-    "dist:linux": "electron-builder --linux",
+    "dist": "electron-builder build",
+    "dist:win": "npm run dist -- -w",
+    "dist:mac": "npm run dist -- -m",
+    "dist:linux": "npm run dist -- -l",
     "lint": "eslint --config .eslintrc.json .",
     "publish": "electron-builder -p always"
   },
@@ -45,13 +41,13 @@
     "toml": "^3.0.0"
   },
   "devDependencies": {
-    "electron": "33.2.1",
+    "electron": "^33.2.1",
     "electron-builder": "^25.1.8",
     "eslint": "^8.57.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kevin-Studio-Dev/SpearfishForest4-HeliosLauncher.git"
+    "url": "https://github.com/{your-username}/{your-repo}.git"
   },
   "build": {
     "appId": "com.spearfish.launcher",
@@ -61,27 +57,6 @@
       "provider": "github",
       "owner": "Kevin-Studio-Dev",
       "repo": "SpearfishForest4-HeliosLauncher"
-    }],
-    "mac": {
-      "category": "public.app-category.games",
-      "target": [
-        "dmg",
-        "zip"
-      ],
-      "icon": "build/icon.icns"
-    },
-    "win": {
-      "target": [
-        "nsis"
-      ],
-      "icon": "build/icon.ico"
-    },
-    "linux": {
-      "target": [
-        "AppImage",
-        "deb"
-      ],
-      "icon": "build/icon.png"
-    }
+    }]
   }
 }
