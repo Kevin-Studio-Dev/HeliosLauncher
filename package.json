@@ -1,22 +1,26 @@
 {
   "name": "spearforestlauncher",
-  "version": "1.0.0",
-  "productName": "Spearforest Launcher",
+  "version": "0.0.1",
+  "productName": "Spearforest4 Launcher",
   "description": "Modded Minecraft Launcher",
-  "author": "Sunghyun Kim",
+  "author": {
+    "name": "Sunghyun Kim",
+    "email": "hello@sunghyun.me"
+  },
   "license": "UNLICENSED",
-  "homepage": "https://github.com/Kevin-Studio-Dev/SpearfishForest4-Launcher-New",
+  "homepage": "https://github.com/Kevin-Studio-Dev/SpearfishForest4-HeliosLauncher",
   "bugs": {
-    "url": "https://github.com/Kevin-Studio-Dev/SpearfishForest4-Launcher-New/issues"
+    "url": "https://github.com/Kevin-Studio-Dev/SpearfishForest4-HeliosLauncher/issues"
   },
   "private": true,
   "main": "index.js",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder build",
-    "dist:win": "npm run dist -- -w",
-    "dist:mac": "npm run dist -- -m",
-    "dist:linux": "npm run dist -- -l",
+    "build": "electron-builder build",
+    "dist": "electron-builder",
+    "dist:win": "electron-builder --win --publish always",
+    "dist:mac": "electron-builder --mac --publish always",
+    "dist:linux": "electron-builder --linux --publish always",
     "lint": "eslint --config .eslintrc.json .",
     "publish": "electron-builder -p always"
   },
@@ -41,12 +45,54 @@
     "toml": "^3.0.0"
   },
   "devDependencies": {
-    "electron": "^33.2.1",
+    "electron": "33.2.1",
     "electron-builder": "^25.1.8",
     "eslint": "^8.57.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/{your-username}/{your-repo}.git"
+    "url": "https://github.com/Kevin-Studio-Dev/SpearfishForest4-HeliosLauncher.git"
+  },
+  "build": {
+    "appId": "com.spearfishforest4.launcher",
+    "productName": "SpearfishForest4 Launcher",
+    "artifactName": "${productName}-setup-${version}.${ext}",
+    "electronDownload": {
+      "isVerifyChecksum": false
+    },
+    "publish": [{
+      "provider": "github",
+      "owner": "Kevin-Studio-Dev",
+      "repo": "SpearfishForest4-HeliosLauncher"
+    }],
+    "mac": {
+      "category": "public.app-category.games",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "darkModeSupport": true,
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "electronLanguages": ["ko"],
+      "artifactName": "${productName}-${version}-${arch}.${ext}",
+      "forceCodeSigning": false,
+      "icon": "build/icon.png"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "build/icon.png",
+      "maintainer": "Sunghyun Kim <hello@sunghyun.me>",
+      "category": "Game"
+    }
   }
 }
