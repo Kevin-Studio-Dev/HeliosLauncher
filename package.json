@@ -60,14 +60,11 @@
     "electronDownload": {
       "isVerifyChecksum": false
     },
-    "publish": [
-      {
-        "provider": "github",
-        "owner": "Kevin-Studio-Dev",
-        "repo": "SpearfishForest4-HeliosLauncher",
-        "force": true
-      }
-    ],
+    "publish": {
+      "provider": "github",
+      "private": false,
+      "releaseType": "release"
+    },
     "mac": {
       "category": "public.app-category.games",
       "target": [

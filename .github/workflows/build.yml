@@ -11,8 +11,8 @@ permissions:
   actions: write
 
 jobs:
-  build:
-    name: Build (${{ matrix.os }})
+  release:
+    name: Build/Release (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -42,29 +42,11 @@ jobs:
           npm install
           npm install -g electron-builder
 
-      # Windows 빌드
-      - name: Build Windows
-        if: matrix.os == 'windows-latest'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run dist:win
-
-      # macOS 빌드
-      - name: Build macOS
-        if: matrix.os == 'macos-latest'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CSC_IDENTITY_AUTO_DISCOVERY: false
-          USE_HARD_LINKS: false
-          ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES: true
-        run: npm run dist:mac
-
-      # Linux 빌드
-      - name: Build Linux
-        if: matrix.os == 'ubuntu-latest'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run dist:linux
+      - name: Build/release Electron app
+        uses: samuelmeuli/action-electron-builder@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          release: true
 
       # 빌드된 파일 업로드
       - name: Upload artifacts
@@ -79,23 +61,12 @@ jobs:
             dist/*.zip
           if-no-files-found: ignore
 
-  release:
-    needs: build
-    runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/')
-    permissions:
-      contents: write
-    
-    steps:
-      - name: Download all artifacts
-        uses: actions/download-artifact@v3
-        with:
-          path: artifacts
-
+      # 릴리스 생성
       - name: Create Release
+        if: matrix.os == 'ubuntu-latest'
         uses: softprops/action-gh-release@v1
         with:
-          files: artifacts/**/*
+          files: dist/*.exe, dist/*.dmg, dist/*.AppImage, dist/*.deb, dist/*.zip
           draft: false
           prerelease: false
         env:
