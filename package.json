@@ -1,7 +1,7 @@
 {
   "name": "spearforestlauncher",
   "version": "0.0.1",
-  "productName": "Spearforest Launcher",
+  "productName": "Spearforest4 Launcher",
   "description": "Modded Minecraft Launcher",
   "author": {
     "name": "Sunghyun Kim",
@@ -54,8 +54,8 @@
     "url": "https://github.com/Kevin-Studio-Dev/SpearfishForest4-HeliosLauncher.git"
   },
   "build": {
-    "appId": "com.spearfish.launcher",
-    "productName": "SpearfishLauncher",
+    "appId": "com.spearfishforest4.launcher",
+    "productName": "SpearfishForest4 Launcher",
     "artifactName": "${productName}-setup-${version}.${ext}",
     "electronDownload": {
       "isVerifyChecksum": false
@@ -74,10 +74,10 @@
       "darkModeSupport": true,
       "hardenedRuntime": true,
       "gatekeeperAssess": false,
-      "electronLanguages": ["en"],
+      "electronLanguages": ["ko"],
       "artifactName": "${productName}-${version}-${arch}.${ext}",
       "forceCodeSigning": false,
-      "icon": null
+      "icon": "build/icon.png"
     },
     "win": {
       "target": [
@@ -91,7 +91,7 @@
         "deb"
       ],
       "icon": "build/icon.png",
-      "maintainer": "Sunghyun Kim <hellosunghyun@gmail.com>",
+      "maintainer": "Sunghyun Kim <hello@sunghyun.me>",
       "category": "Game"
     }
   }
