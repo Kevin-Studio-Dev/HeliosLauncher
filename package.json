@@ -81,6 +81,7 @@
       ],
       "artifactName": "${productName}-${version}-${arch}.${ext}",
       "forceCodeSigning": false,
+      "allowOverwrite": true,
       "icon": "build/icon.png"
     },
     "win": {
