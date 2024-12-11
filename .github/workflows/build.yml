@@ -11,8 +11,8 @@ permissions:
   actions: write
 
 jobs:
-  release:
-    name: Build/Release (${{ matrix.os }})
+  build:
+    name: Build (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -71,23 +71,32 @@ jobs:
           name: ${{ matrix.os }}-artifacts
           path: |
             dist/*.exe
+            dist/*.msi
             dist/*.dmg
             dist/*.AppImage
             dist/*.deb
             dist/*.zip
           if-no-files-found: ignore
 
-      # 릴리스 생성
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v3
+        with:
+          path: artifacts
+
       - name: Create Release
-        if: matrix.os == 'ubuntu-latest'
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            dist/*.exe
-            dist/*.dmg
-            dist/*.AppImage
-            dist/*.deb
-            dist/*.zip
+            artifacts/**/*.exe
+            artifacts/**/*.msi
+            artifacts/**/*.dmg
+            artifacts/**/*.AppImage
+            artifacts/**/*.deb
+            artifacts/**/*.zip
           draft: false
           prerelease: false
         env:
