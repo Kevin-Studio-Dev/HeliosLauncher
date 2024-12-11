@@ -3,10 +3,7 @@
   "version": "0.0.1",
   "productName": "Spearforest Launcher",
   "description": "Modded Minecraft Launcher",
-  "author": {
-    "name": "Sunghyun Kim",
-    "email": "hello@sunghyun.me"
-  },
+  "author": "Sunghyun Kim",
   "license": "UNLICENSED",
   "homepage": "https://github.com/Kevin-Studio-Dev/SpearfishForest4-HeliosLauncher",
   "bugs": {
@@ -71,9 +68,7 @@
       "icon": "build/icon.icns",
       "darkModeSupport": true,
       "hardenedRuntime": true,
-      "gatekeeperAssess": false,
-      "electronLanguages": ["en"],
-      "artifactName": "${productName}-${version}-${arch}.${ext}"
+      "gatekeeperAssess": false
     },
     "win": {
       "target": [
@@ -86,9 +81,7 @@
         "AppImage",
         "deb"
       ],
-      "icon": "build/icon.png",
-      "maintainer": "Sunghyun Kim <hellosunghyun@gmail.com>",
-      "category": "Game"
+      "icon": "build/icon.png"
     }
   }
 }

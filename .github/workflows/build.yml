@@ -37,29 +37,15 @@ jobs:
           npm install
           npm install -g electron-builder
 
-      # Windows 빌드
-      - name: Build Windows
-        if: matrix.os == 'windows-latest'
+      - name: Build/Release Electron app
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run dist:win
-
-      # macOS 빌드
-      - name: Build macOS
-        if: matrix.os == 'macos-latest'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CSC_IDENTITY_AUTO_DISCOVERY: false
-          USE_HARD_LINKS: false
-          ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES: true
         run: |
-          mkdir -p build
-          cp assets/icons/icon.icns build/icon.icns || true
-          npm run dist:mac
-
-      # Linux 빌드
-      - name: Build Linux
-        if: matrix.os == 'ubuntu-latest'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run dist:linux
+          if [ "$RUNNER_OS" == "Windows" ]; then
+            npm run dist:win
+          elif [ "$RUNNER_OS" == "macOS" ]; then
+            export CSC_IDENTITY_AUTO_DISCOVERY=false
+            npm run dist:mac
+          else
+            npm run dist:linux
+          fi 
