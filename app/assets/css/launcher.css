@@ -32,7 +32,6 @@
 body, html, div {
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden;
 }
 
 /* Reset p presets. */
@@ -142,8 +141,6 @@ body, button {
     height: 22px;
     width: 39px;
     cursor: pointer;
-    outline: none;
-    transition: 0.25s ease;
 }
 .frameButton:hover,
 .frameButton:focus {
@@ -3129,7 +3126,7 @@ input:checked + .toggleSwitchSlider:before {
     margin-top: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent rgba(0, 0, 0, 0.75) transparent;
+    border-color: transparent transparent transparent rgba(0, 0, 0, 0.75);
 }
 .mediaButton:hover #settingsTooltip,
 .mediaButton:focus #settingsTooltip,
