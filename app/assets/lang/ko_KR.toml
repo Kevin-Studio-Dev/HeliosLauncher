@@ -182,7 +182,7 @@ javaDownloadPrepare = "Java 다운로드 준비 중.."
 javaDownloadFailureTitle = "Java 다운로드 중 오류 발생"
 javaDownloadFailureText = "자세한 내용은 콘솔(CTRL + Shift + i)을 참조하세요."
 javaRequired = "Java가 필요합니다<br>실행하려면"
-javaRequiredMessage = 'Minecraft를 실행하려면 유효한 x64 Java {major} 설치가 필요합니다.<br><br>수동 설치 방법은 <a href="https://github.com/dscalzi/HeliosLauncher/wiki/Java-Management#manually-installing-a-valid-version-of-java">Java 관리 가이드</a>를 참조하세요.'
+javaRequiredMessage = 'Minecraft를 실행하려면 유효한 x64 Java {major} 설치가 필요합니다.<br><br>수동 설치 방법은 <a href="https://github.com/Kevin-Studio-Dev/SpearfishForest4-HeliosLauncher/wiki/Java-Management#manually-installing-a-valid-version-of-java">Java 관리 가이드</a>를 참조하세요.'
 javaRequiredDismiss = "이해했습니다"
 javaRequiredCancel = "뒤로 가기"
 
@@ -205,7 +205,7 @@ downloadingFiles = "파일 다운로드 중.."
 errorDuringFileDownloadTitle = "파일 다운로드 중 오류 발생"
 preparingToLaunch = "실행 준비 중.."
 launchingGame = "게임 실행 중.."
-launchWrapperNotDownloaded = "필수 파일 LaunchWrapper가 제대로 다운로드되지 않았습니다. 이로 인해 게임을 실행할 수 없습니다.<br><br>이 문제를 해결하려면 일시적으로 백신 소프트웨어를 끄고 게임을 다시 실행하세요.<br><br>시간이 있으시다면 <a href=\"https://github.com/dscalzi/HeliosLauncher/issues\">문제 보고</a>를 통해 사용 중인 백신 소프트웨어를 알려주세요. 저희가 제조사와 연락해 문제를 해결하겠습니다."
+launchWrapperNotDownloaded = "필수 파일 LaunchWrapper가 제대로 다운로드되지 않았습니다. 이로 인해 게임을 실행할 수 없습니다.<br><br>이 문제를 해결하려면 일시적으로 백신 소프트웨어를 끄고 게임을 다시 실행하세요.<br><br>시간이 있으시다면 <a href=\"https://github.com/Kevin-Studio-Dev/SpearfishForest4-HeliosLauncher/issues\">문제 보고</a>를 통해 사용 중인 백신 소프트웨어를 알려주세요. 저희가 제조사와 연락해 문제를 해결하겠습니다."
 doneEnjoyServer = "완료되었습니다. 서버를 즐기세요!"
 checkConsoleForDetails = "자세한 내용은 콘솔(CTRL + Shift + i)을 참조하세요."
 

@@ -343,6 +343,13 @@ function getPlatformIcon(filename){
 
 app.on('ready', createWindow)
 app.on('ready', createMenu)
+app.on('ready', () => {
+    if (process.env.NODE_ENV === 'development') {
+        console.log('Running in development mode..');
+    } else {
+        autoUpdater.checkForUpdatesAndNotify();
+    }
+});
 
 app.on('window-all-closed', () => {
     // On macOS it is common for applications and their menu bar

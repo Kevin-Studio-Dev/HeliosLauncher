@@ -1,6 +1,6 @@
 // NOTE FOR THIRD-PARTY
 // REPLACE THIS CLIENT ID WITH YOUR APPLICATION ID.
-// SEE https://github.com/dscalzi/HeliosLauncher/blob/master/docs/MicrosoftAuth.md
+// SEE https://github.com/Kevin-Studio-Dev/SpearfishForest4-HeliosLauncher/blob/master/docs/MicrosoftAuth.md
 exports.AZURE_CLIENT_ID = 'ce84e1f1-c107-4b06-ba99-01bd2ffa3f7a'
 // SEE NOTE ABOVE.
 
